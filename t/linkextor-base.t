@@ -3,7 +3,7 @@ use warnings;
 
 use HTML::LinkExtor ();
 use URI             ();
-use Test::More tests => 5;
+use Test::More tests => 4;
 
 # This test that HTML::LinkExtor really absolutize links correctly
 # when a base URL is given to the constructor.
@@ -14,10 +14,12 @@ $p->parse(<<HTML)->eof;
 <head>
 <base href="http://www.sn.no/">
 </head>
-<body background="http://www.sn.no/sn.gif">
+<body>
+<form action="/post_here">
+</form>
 
 This is <A HREF="link.html">link</a> and an <img SRC="img.jpg"
-lowsrc="img.gif" alt="Image">.
+alt="Image">.
 HTML
 
 my @links = $p->links;
@@ -34,8 +36,6 @@ for (@links) {
 is($t, 'img');
 
 is(delete $attr{src}, "http://www.sn.no/foo/img.jpg");
-
-is(delete $attr{lowsrc}, "http://www.sn.no/foo/img.gif");
 
 # there should be no more attributes
 ok(!scalar(keys %attr));

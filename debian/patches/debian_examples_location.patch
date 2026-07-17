@@ -3,14 +3,14 @@ Description: On Debian systems the examples are in another directory.
  Note: not to be forwarded upstream
 Origin: vendor
 Forwarded: not-needed
-Reviewed-by: gregor herrmann <gregoa@debian.org>
-Last-Update: 2020-08-31
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2022-03-19
 
 --- a/lib/HTML/Parser.pm
 +++ b/lib/HTML/Parser.pm
-@@ -1065,9 +1065,10 @@
-   $p->parse_file(shift || die) || die $!;
-   print "\n";
+@@ -1069,9 +1069,10 @@
+     $p->parse_file(shift || die) || die $!;
+     print "\n";
  
 -More examples are found in the F<eg/> directory of the C<HTML-Parser>
 -distribution: the program C<hrefsub> shows how you can edit all links

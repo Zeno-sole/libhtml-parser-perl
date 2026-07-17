@@ -1,11 +1,39 @@
 Change history for HTML-Parser
 
+3.83      2024-07-30
+    - fix '$\/]' in HTML::Entities::encode_entities (GH#45) (mauke)
+
+3.82      2024-03-13
+    - "img lowsrc" and "body background" are not in the HTMLv5 spec (GH#43)
+      (Jess)
+    - Replace "FileHandle" with "IO::File" (GH#42) (James Raspass)
+    - Fix some minor typos (GH#41) (Yoshikazu Sawa)
+
+3.81      2023-01-30
+    - Stop depending on "Test" (GH#34) (James Raspass)
+    - fix test scripts after conversion to Test::More (GH#35) (Graham Knop)
+
+3.80      2022-11-01
+  * Fix compatibility with ancient perl by avoiding index in test (GH#33)
+    (Graham Knop)
+
+3.79      2022-10-12
+  * Modernise XS (GH#32) (James Raspass)
+  * Skip threads on older perl versions, as they often segfault (GH#31) (Graham
+  * Knop)
+
+3.78      2022-03-28
+  * Remove unused variable (GH#26) (Michal Josef Špaček)
+
+3.77      2022-03-14
+  * Update tests to remove HTML4 specific tags (GH#25) (Jess)
+
 3.76      2021-03-04
   * Add a fix for a stack confusion error on `eof`. (GH#21) (Matthew Horsfall
     and Chase Whitener)
 
 3.75      2020-08-30
-  * Cleanup the prereqs a bit
+  * Clean up the prereqs a bit
   * Mark HTML::Filter as deprecated as the docs point out
   * Move Parser.pm into the lib directory with the others. This will help
     with everything from auto version bumps after releases, to scanning for

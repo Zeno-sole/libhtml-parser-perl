@@ -1,3 +1,11 @@
+libhtml-parser-perl (3.83-1deepin1) unstable; urgency=medium
+
+  * Restore deepin patches on top of 3.83-1:
+    - CVE-2026-8829.patch: already fixed in upstream 3.83, no restore needed
+    - debian_examples_location.patch: already present
+
+ -- lichenggang <lichenggang@uniontech.com>  Fri, 17 Jul 2026 23:47:00 +0800
+
 libhtml-parser-perl (3.83-1) unstable; urgency=medium
 
   * Team upload.
